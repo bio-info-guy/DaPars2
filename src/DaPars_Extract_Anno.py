@@ -25,7 +25,7 @@ def Annotation_prepar_3UTR_extraction(gene_bed_file, gene_symbol_map_kfXref_file
     for line in open(gene_bed_file,'r'):
         fields = line.strip('\n').split('\t')
         refseq_id = fields[3]
-        if '_' not in fields[0]:
+        if '-' not in fields[0]:
             
             if refseq_id not in refseq_trapt_gene_symbol_dict:
                 gene_symbol = "NA"
