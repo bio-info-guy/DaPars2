@@ -312,11 +312,11 @@ def Estimation_abundance(Region_Coverage, break_point):
 #    print(Region_Coverage[break_point:])
 #    print(max_ind)
     #Long_UTR_abun_min = np.min(Region_Coverage[break_point:][:max_ind])
-    Long_UTR_abun_100 = np.mean(Region_Coverage[break_point:min(len(Region_Coverage), break_point+200)])
+    #Long_UTR_abun_100 = np.mean(Region_Coverage[break_point:min(len(Region_Coverage), break_point+200)])
 #    print(Long_UTR_abun_100)
 #    Short_UTR_abun = np.mean(Region_Coverage[0:break_point] - Long_UTR_abun)
     #Short_UTR_abun_min = np.mean(Region_Coverage[0:break_point] - Long_UTR_abun_min)
-    Short_UTR_abun = np.mean(Region_Coverage[0:break_point] - Long_UTR_abun_100)
+    Short_UTR_abun = np.mean(Region_Coverage[0:break_point] - Long_UTR_abun)
     #Short_UTR_abun = np.mean(Region_Coverage[0:break_point])# - Long_UTR_abun)
     if Short_UTR_abun < 0:
         Short_UTR_abun = 0
@@ -324,7 +324,7 @@ def Estimation_abundance(Region_Coverage, break_point):
      #   Short_UTR_abun_min = 0
     #Coverage_diff = Region_Coverage[0:break_point] - Long_UTR_abun - Short_UTR_abun
     #Coverage_diff = Region_Coverage[0:break_point] - Long_UTR_abun_min - Short_UTR_abun_min
-    Coverage_diff = Region_Coverage[0:break_point] - Long_UTR_abun_100 - Short_UTR_abun
+    Coverage_diff = Region_Coverage[0:break_point] - Long_UTR_abun - Short_UTR_abun
     #Coverage_diff = Region_Coverage[0:break_point] - Short_UTR_abun
     Coverage_diff= np.append(Coverage_diff, Region_Coverage[break_point:] - Long_UTR_abun)
     Mean_Squared_error = np.mean(Coverage_diff**2)

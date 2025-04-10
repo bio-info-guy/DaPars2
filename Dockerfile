@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get -y --no-install-recommends install git
 
-RUN conda install -y python=3.8 numpy scipy
+RUN conda install -y python=3.10 numpy scipy
 
 COPY . /DaPars2
 
